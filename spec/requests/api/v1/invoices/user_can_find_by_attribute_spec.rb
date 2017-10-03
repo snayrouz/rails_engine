@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "user can find by attribute" do
+RSpec.describe "user can find invoice by attribute" do
   scenario "with single query" do
     invoice1 = create(:invoice, status: "deceased")
     invoice2 = create(:invoice, status: "pining")
