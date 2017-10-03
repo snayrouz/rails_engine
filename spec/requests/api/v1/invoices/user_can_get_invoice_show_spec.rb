@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.feature "user can get invoice index" do
+RSpec.describe "user can get invoice show" do
   scenario "by calling api" do
     invoice = create(:invoice)
 
-    get "/api/v1/invoice/#{invoice.id}"
-    object = JSON.parse(response)
+    get "/api/v1/invoices/#{invoice.id}"
+    result = JSON.parse(response.body)
 
     expect(response).to be_success
-    expect(object["id"]).to eq(invoice.id)
-    expect(object["customer_name"]).to eq(invoice.customer.name)
-    expect(object["merchant_name"]).to eq(invoice.merchant.name)
-    expect(object["status"]).to eq(invoice.status)
+    expect(result["id"]).to eq(invoice.id)
+    expect(result["customer_name"]).to eq(invoice.customer.name)
+    expect(result["merchant_name"]).to eq(invoice.merchant.name)
+    expect(result["status"]).to eq(invoice.status)
   end
 end

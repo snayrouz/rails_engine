@@ -1,0 +1,4 @@
+example_id                                                               | status  | run_time        |
+------------------------------------------------------------------------ | ------- | --------------- |
+./spec/requests/api/v1/invoices/user_can_get_invoice_show_spec.rb[1:1]   | passed  | 0.24501 seconds |
+./spec/requests/api/v1/invoices/user_can_get_invoices_index_spec.rb[1:1] | pending | 0.00001 seconds |
