@@ -11,7 +11,6 @@ RSpec.describe "user can get items index" do
     expect(result.count).to eq(4)
     expect(result[3]["id"]).to eq(item[3].id)
     expect(result[0]["name"]).to eq(item[0].name)
-    expect(result[1]["description"]).to eq(item[1].description)
     expect(result[2]["unit_price"]).to eq(item[2].unit_price)
   end
 end
