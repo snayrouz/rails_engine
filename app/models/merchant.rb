@@ -4,6 +4,15 @@ class Merchant < ApplicationRecord
   has_many :items
   has_many :invoices
 
+  def self.most_items(quantity = nil)
+  end
+
+  def favorite_customer
+  end
+
+  def self.most_revenue(limit = 5)
+  end
+
   def total_revenue
     invoices
     .joins(:transactions, :invoice_items)

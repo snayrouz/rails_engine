@@ -5,8 +5,10 @@ class InvoiceItem < ApplicationRecord
 
   before_save :set_unit_price
 
+  private
+
   def set_unit_price
     self.unit_price = self.unit_price/100
   end
-  
+
 end
