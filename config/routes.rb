@@ -27,7 +27,13 @@ Rails.application.routes.draw do
         get "random", to: "random#show"
       end
 
-      resources :merchants, only: [:index, :show]
+      resources :merchants, only: [:index, :show] do
+        scope :customers do
+          get "customers_with_pending_invoices", to: "pending_invoices#index"
+          get "favorite_customer", to: "favorites#show"
+        end
+      end
+
       resources :invoices, only: [:index, :show]
       resources :items, only: [:index, :show]
       resources :invoice_items, only: [:index, :show]
