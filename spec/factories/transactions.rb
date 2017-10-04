@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :transaction do
-    invoice nil
-    credit_card_number 1
-    credit_card_expiration_date 1
-    result "MyString"
+    credit_card_number { Faker::Number.number(10) }
+    credit_card_expiration_date { Faker::Date.between(2.years.ago, Date.today) }
+    result 'success'
+    invoice
   end
 end
