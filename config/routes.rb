@@ -28,10 +28,8 @@ Rails.application.routes.draw do
       end
 
       resources :merchants, only: [:index, :show] do
-        scope :customers do
-          get "customers_with_pending_invoices", to: "pending_invoices#index"
-          get "favorite_customer", to: "favorites#show"
-        end
+        get "customers_with_pending_invoices", to: "merchants/customers/pending_invoices#index"
+        get "favorite_customer", to: "merchants/customers/favorites#show"
       end
 
       resources :invoices, only: [:index, :show]
