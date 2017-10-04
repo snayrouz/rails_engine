@@ -23,10 +23,10 @@ RSpec.describe "user can find invoice by attribute" do
     result = JSON.parse(response.body)
 
     expect(response).to be_success
-    expect(result["id"]).to eq(invoice.id)
-    expect(result["customer_name"]).to eq(invoice.customer.name)
-    expect(result["merchant_name"]).to eq(invoice.merchant.name)
-    expect(result["status"]).to eq(invoice.status)
+    expect(result["id"]).to eq(invoice1.id)
+    expect(result["customer_name"]).to eq(invoice1.customer.name)
+    expect(result["merchant_name"]).to eq(invoice1.merchant.name)
+    expect(result["status"]).to eq(invoice1.status)
   end
 
   scenario "with no results" do
@@ -37,8 +37,7 @@ RSpec.describe "user can find invoice by attribute" do
     result = JSON.parse(response.body)
 
     expect(response).to be_success
-    expect(response.count).to eq(0)
-    expect(response["id"]).to eq(nil)
+    expect(result).to eq(nil)
   end
 
 end

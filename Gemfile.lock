@@ -167,15 +167,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-  active_model_serializers
-  byebug
-  capybara
-=======
   active_model_serializers (~> 0.10.0)
   byebug
+  capybara
   database_cleaner
->>>>>>> aa35e204e428771de4902d7131f3060bace2e36a
   factory_girl_rails
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)

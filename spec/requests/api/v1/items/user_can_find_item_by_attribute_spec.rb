@@ -23,10 +23,10 @@ RSpec.describe "user can find item by attribute" do
     result = JSON.parse(response.body)
 
     expect(response).to be_success
-    expect(result["id"]).to eq(item.id)
-    expect(result["name"]).to eq(item.name)
-    expect(result["description"]).to eq(item.description)
-    expect(result["unit_price"]).to eq(item.unit_price)
+    expect(result["id"]).to eq(item1.id)
+    expect(result["name"]).to eq(item1.name)
+    expect(result["description"]).to eq(item1.description)
+    expect(result["unit_price"]).to eq(item1.unit_price)
   end
 
   scenario "with no results" do
@@ -37,8 +37,7 @@ RSpec.describe "user can find item by attribute" do
     result = JSON.parse(response.body)
 
     expect(response).to be_success
-    expect(response.count).to eq(0)
-    expect(response["id"]).to eq(nil)
+    expect(result).to eq(nil)
   end
 
 end
