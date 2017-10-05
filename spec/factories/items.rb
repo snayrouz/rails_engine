@@ -1,7 +1,11 @@
 FactoryGirl.define do
   factory :item do
-    name "MyString"
-    description "MyString"
+    sequence :name do |i|
+      "MyString#{i}"
+    end
+    sequence :description do |i|
+      "MyString#{i}"
+    end
     unit_price 1
     merchant
     created_at "2017-10-03 10:10:10"

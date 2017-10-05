@@ -1,7 +1,19 @@
 class Customer < ApplicationRecord
+  validates_presence_of :first_name, :last_name
+
   has_many :invoices
+  has_many :invoice_items, through: :invoices
   has_many :transactions, through: :invoices
-  validates :first_name, :last_name, presence: true
+
+  def name
+    first_name + " " + last_name
+  end
+
+  def self.with_pending_invoices(merchant_id)
+    joins(:transactions)
+    .where(invoices: {merchant_id: merchant_id})
+    .merge(Invoice.pending)
+  end
 
   def favorite_merchant
     invoices
