@@ -23,4 +23,13 @@ class Customer < ApplicationRecord
     .maximum("revenue")
   end
 
+  def favorite_merchant
+    invoices
+    .select('merchants.*, count(invoices.id) AS customer_transactions')
+    .joins(:transactions, :merchant)
+    .merge(Transaction.successful)
+    .group('merchants.id')
+    .order('customer_transactions DESC')
+    .first
+  end
 end
