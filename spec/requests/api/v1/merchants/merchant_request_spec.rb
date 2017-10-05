@@ -13,7 +13,7 @@ describe "Merchants API" do
     expect(merchants.count).to eq(3)
   end
 
-  it "can get one merchant by its id" do
+  it "can get one merchant by id" do
     id = create(:merchant).id
 
     get "/api/v1/merchants/#{id}"
@@ -24,7 +24,7 @@ describe "Merchants API" do
     expect(merchant["id"]).to eq(id)
   end
 
-  it "can get one merchant by its name" do
+  it "can get one merchant by name" do
     name = create(:merchant).name
 
     get "/api/v1/merchants/find?name=#{name}"
@@ -81,7 +81,7 @@ describe "Merchants API" do
     expect(merchant.count).to eq(1)
   end
 
-  it "can get all merchants by matching created_at" do
+  it "can get all merchants by created_at" do
     create_list(:merchant, 3)
 
     merchant_one = Merchant.first
@@ -94,7 +94,7 @@ describe "Merchants API" do
     expect(merchant.count).to eq(3)
   end
 
-  it "can get all merchants by matching updated_at" do
+  it "can get all merchants by updated_at" do
     create_list(:merchant, 3)
 
     merchant_one = Merchant.first
