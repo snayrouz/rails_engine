@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "user can get merchant's favorite customer" do
   scenario "when there is one favorite" do
     merchant = create(:merchant)
-    customer1, customer2 = create(:customer, 2)
-    invoice1, invoice2 = create_list(:invoice, merchant: merchant, customer: customer1, 2)
+    customer1, customer2 = create_list(:customer, 2)
+    invoice1, invoice2 = create(:invoice, merchant: merchant, customer: customer1, 2)
     invoice3 = create(:invoice, merchant: merchant, customer: customer2)
-    invoice1.items = create(:item, 2)
+    invoice1.items = create_list(:item, 2)
     invoice2.items = create(:item)
     invoice3.items = create(:item)
 
