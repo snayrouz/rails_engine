@@ -10,16 +10,17 @@ class Customer < ApplicationRecord
   end
 
   def self.with_pending_invoices(merchant_id)
-    joins(:invoices, :transactions)
+    joins(:transactions)
     .where(invoices: {merchant_id: merchant_id})
-    .except(transactions: {status: 'success'})
+    .merge(Invoice.pending)
   end
 
   def self.merchant_favorite(merchant_id)
     select("customers.*, sum(invoice_items.quantity*invoice_items.unit_price) AS revenue")
-    .joins(:invoices, :transactions)
-    .where(invoices: {merchant_id: merchant_id}, transactions: {status: 'success'})
-    .max_by("revenue")
+    .joins(:transactions)
+    .merge(Invoice.completed)
+    .where(invoices: {merchant_id: merchant_id})
+    .maximum("revenue")
   end
 
 end
