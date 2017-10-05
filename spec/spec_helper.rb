@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 require 'simplecov'
 SimpleCov.start do
   add_filter "/spec/"
@@ -19,7 +17,6 @@ end
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
->>>>>>> 800022b8cb85433dc22a7646a9a1319c3f1b142a
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

@@ -2,10 +2,7 @@ FactoryGirl.define do
   factory :invoice do
     customer
     merchant
-<<<<<<< HEAD
     status "resting"
-=======
-    status "shipped"
 
     trait :with_transactions do
       transient do
@@ -26,6 +23,5 @@ FactoryGirl.define do
         invoice.invoice_items << create_list(:invoice_item, evaluator.invoice_item_count)
       end
     end
->>>>>>> 800022b8cb85433dc22a7646a9a1319c3f1b142a
   end
 end
