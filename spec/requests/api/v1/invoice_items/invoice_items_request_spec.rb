@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Invoices API" do
+RSpec.describe "Invoices API" do
   it "sends a list of invoice_items" do
     create_list(:invoice_item, 3)
 

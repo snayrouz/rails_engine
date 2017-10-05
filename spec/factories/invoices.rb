@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :invoice do
     customer
     merchant
-    status "shipped"
+    status "resting"
 
     trait :with_transactions do
       transient do
