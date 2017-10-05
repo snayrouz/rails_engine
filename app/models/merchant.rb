@@ -1,8 +1,7 @@
 class Merchant < ApplicationRecord
-  validates_presence_of :name
-
   has_many :items
   has_many :invoices
+  validates_presence_of :name
 
   def self.most_items(quantity = nil)
     select('merchants.*, sum(invoice_items.quantity) AS item_count')
