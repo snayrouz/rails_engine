@@ -7,7 +7,7 @@ class Api::V1::Merchants::RevenueController < ApplicationController
 
   def show
     date = params["date"]
-    render json: Merchant.total_revenue_at_date(date)
+    render json: Invoice.total_revenue_at_date(date)
   end
 
 end
