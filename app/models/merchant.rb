@@ -6,11 +6,11 @@ class Merchant < ApplicationRecord
   validates_presence_of :name
 
   def self.top_by_revenue(number=0)
-    select("merchants.*, sum(invoice_items.quantity * invoice_items.unit_price) AS invoices.revenue,
-    sum(invoices.revenue) AS revenue")
+    select("merchants.*", "sum(invoice_items.quantity * invoice_items.unit_price) AS revenue")
     .joins(invoices: :invoice_items)
+    .group("merchants.id")
+    .order("sum(revenue) DESC")
     .merge(Invoice.completed)
-    .order_by("revenue DESC")
     .limit(number)
   end
 
@@ -25,12 +25,11 @@ class Merchant < ApplicationRecord
 
   def favorite_customer
     invoices
-    .select("customers.*, sum(invoice_items.quantity*invoice_items.unit_price) AS revenue")
-    .joins(:invoice_items, :invoices, :customers)
-    .where(invoices: { merchant_id: id })
+    .select("customers.*", "count(customers.invoices) AS invoices_count")
+    .from(:customers)
+    .joins(invoices: :customers)
     .merge(Invoice.completed)
-    .group("customers.id")
-    .order("revenue DESC")
+    .order("invoices_count DESC")
     .first
   end
 
