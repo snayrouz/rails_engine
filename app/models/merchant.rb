@@ -5,6 +5,7 @@ class Merchant < ApplicationRecord
   has_many :invoices
 
   def self.most_items(quantity = nil)
+    
   end
 
   def favorite_customer
