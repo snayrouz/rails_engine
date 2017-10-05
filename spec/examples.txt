@@ -1,7 +1,7 @@
 example_id                                                                                                        | status | run_time        |
 ----------------------------------------------------------------------------------------------------------------- | ------ | --------------- |
-./spec/requests/api/v1/business_intelligence/items/user_can_get_top_items_by_revenue_spec.rb[1:1]                 | failed | 0.03247 seconds |
-./spec/requests/api/v1/business_intelligence/items/user_can_get_top_items_by_revenue_spec.rb[1:2]                 | failed | 0.35861 seconds |
+./spec/requests/api/v1/business_intelligence/items/user_can_get_top_items_by_revenue_spec.rb[1:1]                 | failed | 0.35029 seconds |
+./spec/requests/api/v1/business_intelligence/items/user_can_get_top_items_by_revenue_spec.rb[1:2]                 | failed | 0.03598 seconds |
 ./spec/requests/api/v1/business_intelligence/merchants/users_can_get_customers_with_pending_invoices_spec.rb[1:1] | failed | 0.07977 seconds |
 ./spec/requests/api/v1/business_intelligence/merchants/users_can_get_customers_with_pending_invoices_spec.rb[1:2] | passed | 0.34281 seconds |
 ./spec/requests/api/v1/invoice_items/user_can_find_invoice_items_by_attribute_spec.rb[1:1]                        | passed | 0.04384 seconds |

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
         get "find_all", to: "search#index"
         get "find", to: "search#show"
         get "random", to: "random#show"
+        get "most_revenue", to: "revenue#index"
+        get "revenue", to: "revenue#show"
       end
 
       namespace 'invoices' do
