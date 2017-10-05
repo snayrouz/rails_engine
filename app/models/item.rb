@@ -7,9 +7,22 @@ class Item < ApplicationRecord
   before_save :set_unit_price
 
   def best_day
+    invoices
+    .select('invoices.*, sum(invoice_items.quantity) AS purchases')
+    .joins(:transactions, :invoice_items)
+    .merge(Transaction.successful)
+    .group(:id)
+    .order('purchases DESC, invoices.created_at DESC')
+    .first
   end
 
   def self.most_items(quantity = nil)
+    select('items.*, sum(invoice_items.quantity) AS num_sold')
+    .joins(:invoice_items, invoices: [:transactions])
+    .merge(Transaction.successful)
+    .group(:id)
+    .order('num_sold DESC')
+    .limit(quantity)
   end
 
   private
