@@ -10,6 +10,7 @@ class Item < ApplicationRecord
     .order("revenue DESC")
     .merge(Transaction.successful)
     .limit(number)
+  end
 
   before_save :set_unit_price
 

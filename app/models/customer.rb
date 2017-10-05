@@ -15,14 +15,6 @@ class Customer < ApplicationRecord
     .merge(Invoice.pending)
   end
 
-  def self.merchant_favorite(merchant_id)
-    select("customers.*, sum(invoice_items.quantity*invoice_items.unit_price) AS revenue")
-    .joins(:transactions)
-    .merge(Invoice.completed)
-    .where(invoices: {merchant_id: merchant_id})
-    .maximum("revenue")
-  end
-
   def favorite_merchant
     invoices
     .select('merchants.*, count(invoices.id) AS customer_transactions')

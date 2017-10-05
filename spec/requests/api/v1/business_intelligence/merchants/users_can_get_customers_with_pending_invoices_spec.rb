@@ -13,7 +13,6 @@ RSpec.describe "user can get customers with pending invoices" do
 
     get "/api/v1/merchants/#{merchant.id}/customers_with_pending_invoices"
     result = JSON.parse(response.body)
-    binding.pry
 
     expect(response).to be_success
     expect(result["id"]).to eq("#{customer2.id}")
