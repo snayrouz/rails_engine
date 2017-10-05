@@ -22,12 +22,6 @@ class Merchant < ApplicationRecord
    .limit(quantity)
   end
 
-  def favorite_customer
-  end
-
-  def self.most_revenue(limit = 5)
-  end
-
   def total_revenue
     invoices
     .joins(:transactions, :invoice_items)
