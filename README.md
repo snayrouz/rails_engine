@@ -4,9 +4,9 @@ This is a Rails API used to serve up JSON records and e-commerce business intell
 
 In order to run this on your local machine you must have the following installed:
 
-Rails 5.1.2
-PostgreSQL
-Ruby 2.4.1
+* Rails 5.1.2
+* PostgreSQL
+* Ruby 2.4.1
 
 ## To set up the API locally:
 
