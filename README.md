@@ -133,3 +133,12 @@ These endpoints return Business Intelligence data
 ### Customers
 
 * `GET /api/v1/customers/:id/favorite_merchant` returns a merchant where the customer has conducted the most successful transactions
+
+#### Completed By
+@snayrouz
+@liambarstad
+
+### Learning Goals
+* Learn how to to build Single-Responsibility controllers to provide a well-designed and versioned API.
+* Learn how to use controller tests to drive your design.
+* Use Ruby and ActiveRecord to perform more complicated business intelligence.
