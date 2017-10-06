@@ -8,6 +8,7 @@ RSpec.describe "user can get top items" do
 
     get "/api/v1/items/most_revenue?quantity=3"
     result = JSON.parse(response.body)
+    binding.pry
 
     expect(response).to be_success
     expect(result.count).to eq(3)
