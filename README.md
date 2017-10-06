@@ -18,7 +18,8 @@ In order to run this on your local machine you must have the following installed
 
 ## Test Suite
 
-This project uses an RSpec test suite. To run the entire suite, simply run the command rspec in the Terminal. To check test coverage, run open coverage/index.hmtl
+This project uses an RSpec test suite. To run the entire suite, run the command rspec in the Terminal. 
+To check test coverage, run open coverage/index.hmtl
 
 ## Record Endpoints
 
