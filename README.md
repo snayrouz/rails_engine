@@ -10,11 +10,11 @@ In order to run this on your local machine you must have the following installed
 
 ## To set up the API locally:
 
-Clone down this repo
-cd rail_engine
-bundle install
-Set up the database by running rake db:{create,migrate}
-Seed the database by running rake import_csv:all
+* Clone down this repo
+* cd rail_engine
+* bundle install
+* Set up the database by running rake db:{create,migrate}
+* Seed the database by running rake import_csv:all
 
 ## Test Suite
 
