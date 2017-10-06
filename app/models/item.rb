@@ -19,8 +19,7 @@ class Item < ApplicationRecord
     invoices
     .select('invoices.*, sum(invoice_items.quantity) AS purchases')
     .joins(:transactions, :invoice_items)
-    .merge(Transaction.successful)
-    .group(:id)
+    .group('invoices.created_at', 'invoices.id')
     .order('purchases DESC, invoices.created_at DESC')
     .first
     .created_at
