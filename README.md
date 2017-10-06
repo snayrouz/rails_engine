@@ -25,27 +25,27 @@ To check test coverage, run `open coverage/index.hmtl`
 
 These endpoints return records associated with the six tables in our database.
 
-1. merchants 
+1. Merchants 
 * `GET /api/v1/merchants/` returns all merchants 
 * `GET /api/v1/merchants/1` returns individual merchant by id
 
-2. customers 
+2. Customers 
 * `GET /api/v1/customers/` returns all customers 
 * `GET /api/v1/customers/1` returns individual customer by id
 
-3. items 
+3. Items 
 * `GET /api/v1/items/` returns all items 
 * `GET /api/v1/items/1` returns individual item by id
 
-4. invoices 
+4. Invoices 
 * `GET /api/v1/invoices/` returns all invoices 
 * `GET /api/v1/invoices/1` returns individual invoice by id
 
-5. invoice_items 
+5. Invoice_items 
 * `GET /api/v1/invoice_items/` returns all invoice_items 
 * `GET /api/v1/invoice_items/1` returns individual invoice_item by id
 
-6. transactions 
+6. Transactions 
 * `GET /api/v1/transactions/` returns all transactions 
 * `GET /api/v1/transactions/1` returns individual transaction by id
 
