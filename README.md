@@ -142,5 +142,5 @@ These endpoints return Business Intelligence data
 * Use Ruby and ActiveRecord to perform more complicated business intelligence.
 
 #### Completed By
-[@snayrouz](https://github.com/snayrouz)
-[@liambarstad](https://github.com/liambarstad
+* [@snayrouz](https://github.com/snayrouz)
+* [@liambarstad](https://github.com/liambarstad)
