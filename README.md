@@ -8,7 +8,7 @@ In order to run this on your local machine you must have the following installed
 * PostgreSQL
 * Ruby 2.4.1
 
-## To set up the API locally:
+## Setting up the API locally:
 
 * Clone down this repo
 * cd rail_engine
