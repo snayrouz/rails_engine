@@ -26,8 +26,8 @@ To check test coverage, run `open coverage/index.hmtl`
 These endpoints return records associated with the six tables in our database.
 
 1. merchants 
-*`GET /api/v1/merchants/` returns all merchants 
-*`GET /api/v1/merchants/1` returns individual merchant by id
+* `GET /api/v1/merchants/` returns all merchants 
+* `GET /api/v1/merchants/1` returns individual merchant by id
 
 2. customers 
 * `GET /api/v1/customers/` returns all customers 
