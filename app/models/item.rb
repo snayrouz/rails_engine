@@ -29,7 +29,7 @@ class Item < ApplicationRecord
     select('items.*, sum(invoice_items.quantity) AS num_sold')
     .joins(:invoice_items, invoices: [:transactions])
     .merge(Transaction.successful)
-    .group(:id)
+    .group('items.id', 'transactions.id')
     .order('num_sold DESC')
     .limit(quantity)
   end
