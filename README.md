@@ -38,7 +38,10 @@ transactions GET /api/v1/transactions/ returns all transactions GET /api/v1/tran
 
 find, find_all, and random endpoints are also available for each tables. find and find_all allow you to search by record attributes.
 
-Examples queries: GET /api/v1/merchants/find?name=Schroeder-Jerde GET /api/v1/invoices/find_all?status=shipped GET /api/v1/items/random
+Examples queries: 
+* GET /api/v1/merchants/find?name=Schroeder-Jerde 
+* GET /api/v1/invoices/find_all?status=shipped 
+* GET /api/v1/items/random
 
 ## Relationship Endpoints
 
