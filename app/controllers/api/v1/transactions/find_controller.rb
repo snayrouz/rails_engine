@@ -10,8 +10,7 @@ class Api::V1::Transactions::FindController < ApplicationController
   private
 
   def search_params
-    params.permit(:id,
-                  :invoice_id,
+    params.permit(:invoice_id,
                   :credit_card_number,
                   :credit_card_expiration_date,
                   :result,

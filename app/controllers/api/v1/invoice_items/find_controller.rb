@@ -9,8 +9,7 @@ class Api::V1::InvoiceItems::FindController < ApplicationController
   private
 
   def search_params
-    params.permit(:id,
-                  :invoice_id,
+    params.permit(:invoice_id,
                   :item_id,
                   :quantity,
                   :unit_price,
