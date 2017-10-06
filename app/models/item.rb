@@ -22,6 +22,7 @@ class Item < ApplicationRecord
     .group(:id)
     .order('purchases DESC, invoices.created_at DESC')
     .first
+    .created_at
   end
 
   def self.most_items(quantity = nil)
