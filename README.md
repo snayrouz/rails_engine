@@ -11,7 +11,7 @@ In order to run this on your local machine you must have the following installed
 ## Setting up the API locally:
 
 * Clone down this repo
-* `cd rail_engine`
+* `cd rails_engine`
 * `bundle install`
 * Set up the database by running `bundle exec rake db:{create,migrate}`
 * Seed the database by running `rake import_csv:all`
