@@ -12,7 +12,7 @@ class Item < ApplicationRecord
     .group("items.id", "transactions.id")
     .merge(Transaction.successful)
     .order("revenue DESC")
-    .limit(10)
+    .limit(number)
   end
 
   def best_day
