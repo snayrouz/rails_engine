@@ -4,15 +4,16 @@ class Item < ApplicationRecord
   has_many :invoices, -> { distinct }, through: :invoice_items
   belongs_to :merchant
 
+  before_save :set_unit_price
+
   def self.top_by_revenue(number=0)
     select("items.*, sum(invoice_items.quantity * invoice_items.unit_price) AS revenue")
     .joins(invoices: :transactions)
-    .order("revenue DESC")
+    .group("items.id", "transactions.id")
     .merge(Transaction.successful)
-    .limit(number)
+    .order("revenue DESC")
+    .limit(10)
   end
-
-  before_save :set_unit_price
 
   def best_day
     invoices

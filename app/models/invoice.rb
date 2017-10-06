@@ -7,7 +7,7 @@ class Invoice < ApplicationRecord
   has_many :invoice_items
   has_many :items, through: :invoice_items
 
-  scope :completed, -> { joins(:transactions).merge(Transaction.successful).uniq }
+  scope :completed, -> { joins(:transactions).merge(Transaction.successful) }
   scope :pending, -> { all - Invoice.completed }
 
   def total_revenue_at_date(date=nil)
